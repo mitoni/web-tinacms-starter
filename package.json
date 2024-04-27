@@ -1,0 +1,35 @@
+{
+  "name": "web-tinacms-starter",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "TINA_PUBLIC_IS_LOCAL=true bun --bun run tinacms dev -c \"bun --bun run next dev\"",
+    "dev:prod": "TINA_PUBLIC_IS_LOCAL=false bun --bun tinacms dev -c \"bun --bun next dev\"",
+    "build": "bun --bun run tinacms build --partial-reindex && bun --bun run next build",
+    "start": "bun --bun run next start",
+    "lint": "bun --bun run next lint"
+  },
+  "devDependencies": {
+    "@types/node": "^20.9.0",
+    "@types/react": "18.2.7",
+    "@types/react-dom": "18.2.4",
+    "autoprefixer": "^10.4.16",
+    "eslint": "8.41.0",
+    "eslint-config-next": "13.4.4",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.5"
+  },
+  "dependencies": {
+    "@tinacms/cli": "^1.5.34",
+    "@tinacms/datalayer": "^1.2.29",
+    "next": "^14.0.3",
+    "next-auth": "^4.24.5",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "tinacms": "^1.5.24",
+    "tinacms-authjs": "^1.0.1",
+    "tinacms-gitprovider-github": "^1.0.0",
+    "typescript": "5.0.4",
+    "upstash-redis-level": "^1.1.1"
+  }
+}

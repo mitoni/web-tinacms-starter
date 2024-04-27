@@ -1,0 +1,14 @@
+{
+  "users": [
+    {
+      "name": "Admin User",
+      "email": "admin@admin.com",
+      "username": "admin",
+      "password": {
+        "value": "admin",
+        "passwordChangeRequired": true
+      }
+    }
+  ]
+}
+
