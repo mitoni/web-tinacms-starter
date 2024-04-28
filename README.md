@@ -16,7 +16,17 @@ Preconfigured version of Tina Self Hosted for quicker development of custom webs
 After the repository is created, you will need to do the following steps to get the environment variables setup:
 
 1. Create a new [GitHub personal access token (PAT)](https://github.com/settings/personal-access-tokens/new) with content access to the new repository and copy the token as the value for the `GITHUB_PERSONAL_ACCESS_TOKEN` environment variable.
-2. Fill out the `NEXTAUTH_SECRET` environment variable with a random string.
+2. Fill out the `NEXTAUTH_SECRET` environment variable with a random string generated using `scripts/generate-auth-secret.sh`.
+3. Store the Github PAT as well as the `NEXTAUTH_SECRET` in Vercel's Environment Variables.
+4. Copy the `NEXTAUTH_SECRET` in the local .env file (if you haven't already, create a copy of `.env.example` and rename it `.env`.
+
+### Users Setup
+To be able to login in the production environment we need to set a password locally while connected to the production kv storage.
+1. Fill out `KV_REST_API_URL` and `KV_REST_API_TOKEN` in the `.env` file with the values from Vercel.
+2. Run the app using `bun dev:prod` 
+3. Login using the default credentials found in `content/user/index.json` and change the password accordingly. 
+4. After deploying the website, login using the default user name and the newly created password.
+
 
 # Local Development
 
